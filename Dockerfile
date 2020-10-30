@@ -1,8 +1,6 @@
 FROM pinzhikeji/jdk8-alpine:1.2
 
-RUN echo "downloading tomcat" \ 
-    && wget http://image.xiniudada.top/file/apache-tomcat-8.5.59.tar.gz \
-    -q -O /tmp/tomcat8.tar.gz
+RUN wget https://downloads.apache.org/tomcat/tomcat-8/v8.5.59/bin/apache-tomcat-8.5.59.tar.gz -q -O /tmp/tomcat8.tar.gz
 
 RUN mkdir /usr/local/tomcat8 \
     && tar -xzvf /tmp/tomcat8.tar.gz -C /usr/local/tomcat8/ \
