@@ -1,4 +1,4 @@
-FROM pinzhikeji/jdk8-alpine
+FROM pinzhikeji/jdk8-alpine:1.2
 
 RUN echo "downloading tomcat" \ 
     && wget http://image.xiniudada.top/file/apache-tomcat-8.5.59.tar.gz \
@@ -14,7 +14,8 @@ RUN mkdir /usr/local/tomcat8 \
 
 COPY license.lic /usr/local/license.lic
 
-ENV LC_ALL zh_CN.uft8
+ENV LANG=zh_CN.utf8 \
+    LANGUAGE=zh_CN.utf8
 
 WORKDIR /usr/local/tomcat8/bin
 
