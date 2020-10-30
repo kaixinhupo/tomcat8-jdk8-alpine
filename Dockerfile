@@ -1,8 +1,7 @@
-FROM pinzhikeji/jdk8-alpine:1.2
+FROM pinzhikeji/jdk8-alpine:1.3
 
-RUN wget https://downloads.apache.org/tomcat/tomcat-8/v8.5.59/bin/apache-tomcat-8.5.59.tar.gz -q -O /tmp/tomcat8.tar.gz
-
-RUN mkdir /usr/local/tomcat8 \
+RUN wget https://downloads.apache.org/tomcat/tomcat-8/v8.5.59/bin/apache-tomcat-8.5.59.tar.gz -q -O /tmp/tomcat8.tar.gz \
+    && mkdir /usr/local/tomcat8 \
     && tar -xzvf /tmp/tomcat8.tar.gz -C /usr/local/tomcat8/ \
     && mv /usr/local/tomcat8/apache-tomcat-8.5.59/* /usr/local/tomcat8/ \
     && rm -rf /usr/local/tomcat8/apache-tomcat-8.5.59/ \
