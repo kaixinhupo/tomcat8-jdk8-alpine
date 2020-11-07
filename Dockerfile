@@ -10,6 +10,7 @@ RUN wget https://downloads.apache.org/tomcat/tomcat-8/v8.5.59/bin/apache-tomcat-
     && rm /tmp/tomcat8.tar.gz
 
 COPY license.lic /usr/local/license.lic
+COPY server.xml /usr/local/tomcat8/conf/server.xml
 
 ENV LANG=zh_CN.utf8 \
     LANGUAGE=zh_CN.utf8
